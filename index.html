@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Work Ticket - Retail US (V2)</title>
+<style>
+:root{--ink:#1b2733;--muted:#727c86;--line:#dbe1e8;--accent:#1f7a54;--accent-tint:#eef6f1;--band:#f4f6f8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;font-size:10.5px;color:var(--ink);line-height:1.3;}
+html,body{width:8.5in;margin:0 auto;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:8.5in;min-height:11in;padding:0.3in 0.34in 0.24in 0.34in;background:#fff;display:flex;flex-direction:column;}
+b{font-weight:700;}
+.l{color:var(--muted);font-weight:400;margin-right:5px;white-space:nowrap;}
+.v{font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
+.f{display:flex;gap:0;margin-bottom:2px;align-items:baseline;}
+.f .l{flex:0 0 auto;}.f .v{flex:1 1 auto;min-width:0;}
+.csz{display:flex;flex-wrap:wrap;gap:1px 4px;align-items:baseline;margin-bottom:2px;}
+.csz .l{margin-right:2px;}
+.csz .cv{font-weight:700;margin-right:8px;word-break:break-word;overflow-wrap:anywhere;}
+.report-header{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:2px solid var(--accent);padding-bottom:7px;margin-bottom:7px;}
+.hdr-left{display:flex;align-items:center;gap:11px;}
+.delivery-pill{background:var(--accent-tint);color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.3px;padding:4px 12px;border-radius:4px;text-transform:uppercase;}
+.hdr-date .d1{font-size:15px;font-weight:700;}.hdr-date .d2{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.hdr-center{flex:1;text-align:center;}
+.hdr-center .dow{font-size:26px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--ink);line-height:1;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.hdr-right .qr{width:52px;height:52px;display:block;}
+.hdr-right .ord-block{text-align:right;line-height:1.05;}
+.ord-label{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;}
+.ord-num{font-size:20px;font-weight:800;}
+.copy-stamp{display:inline-block;margin-top:1px;font-size:8px;font-weight:700;color:#fff;background:var(--accent);padding:1px 7px;border-radius:3px;letter-spacing:.5px;}
+.sh{border-left:3px solid var(--accent);background:var(--band);padding:3px 8px;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;margin:6px 0 3px;}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px 22px;}
+.colbox{min-width:0;}
+.free{font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
+.freewrap{margin-bottom:3px;}
+.freewrap .l{display:block;color:var(--muted);font-weight:400;margin-bottom:1px;white-space:normal;}
+table.od{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:2px;}
+table.od th{border-bottom:1.5px solid var(--accent);padding:3px 6px;text-align:left;font-size:8.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;}
+table.od td{border-bottom:1px solid var(--line);padding:3px 6px;vertical-align:top;font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
+table.od th.r,table.od td.r{text-align:right;}table.od th.c,table.od td.c{text-align:center;}
+table.od tr.desc td{font-weight:400;font-style:italic;color:#59636e;border-bottom:1px solid var(--line);padding:0 6px 3px 24px;}
+.totals{display:flex;margin-top:5px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.totals .c{flex:1;padding:4px 6px;display:flex;flex-direction:column;gap:1px;border-right:1px solid var(--line);}
+.totals .c:last-child{border-right:none;}
+.totals .c .tl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+.totals .c .ta{font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
+.totals .c.tot .tl{color:var(--accent);}.totals .c.tot .ta{color:var(--accent);font-weight:800;font-size:12px;}
+.ts{display:flex;margin-top:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.ts .tlab{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700;padding:4px 8px 4px 0;align-self:center;}
+.ts .tc{flex:1;padding:4px 6px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:1px;}
+.ts .tc .tl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+.ts .tc .tv{font-weight:700;}
+.notes-line{margin-top:6px;}
+.notes-line .l{color:var(--muted);font-weight:400;text-transform:uppercase;font-size:8.5px;letter-spacing:.5px;margin-right:6px;}
+.notes-line b{word-break:break-word;overflow-wrap:anywhere;}
+.report-footer{display:flex;justify-content:space-between;align-items:flex-end;font-size:8.5px;color:var(--muted);margin-top:auto;padding-top:6px;border-top:1px solid var(--line);}
+.report-footer .pg{font-weight:700;color:var(--ink);}
+.screen-note{max-width:8.5in;margin:0 auto 10px;background:#fff8e1;border:1px solid #f0d67a;border-radius:5px;padding:8px 12px;font:12px/1.4 "Segoe UI",Arial;color:#6b5a10;}
+.screen-note.ok{background:#eef6f1;border-color:#8fc9ae;color:#1f5c40;}
+@media print{.screen-note{display:none;}html,body{width:8.5in;margin:0;}.page{padding:0.3in 0.34in 0.24in 0.34in;}@page{size:letter;margin:0;}}
+@media screen{body{background:#d9dee3;padding:20px;}.page{box-shadow:0 2px 18px rgba(0,0,0,0.18);border-radius:2px;margin:0 auto;}}
+</style></head><body>
+
+<div class="page">
+<div class="report-header">
+<div class="hdr-left"><span class="delivery-pill">Wire_Out</span>
+<div class="hdr-date"><div class="d1">04/08/2026</div></div></div>
+<div class="hdr-center"><div class="dow">Wednesday</div></div>
+<div class="hdr-right"><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAADmAQAAAADpEcQWAAABP0lEQVR4nO1ZQW7EIBDzlEg9kh+Rn/Vr8KBI5FgJ5B6ATTbZ3fZUqDo+oDA+xBo5YIgQz5HfXpDAf2NBf3gyhGNqBZvG1NyxV5YkmVAGbxNIkvTaqyubRWQGgG2q1SAivVWNx06H57CYJC7m/qrGZKfTnGFef+O9f5GdABgCqG4qvnLsq2pMdgI2aRO7CsO8ohbsoJr77YM7PAwBuxd0H7xHyQzetlTlIgDAaGa44ugry+Kr0jCnvjqBZAIcE8gItNyuvnrMGgLbOxFmgH6bQG8/NYteUc+D+8kG0DPOM9aRJKPh7WQDAFl99YANUtFK9ZOUjzis5m5su2eAIymLTZClv6oBWdRoZVNJWnUfrLUxNY/QK0Zzy1eG2qtvWRezIMxZSF2vTjjfizI2r2luP+Puvr0NpK5XV4j+x/kx+wURA+6gOtatrgAAAABJRU5ErkJggg==" alt="QR 36239"/>
+<div class="ord-block"><div class="ord-label">Order #</div><div class="ord-num">36239</div><div class="copy-stamp">COPY - 1</div></div></div></div>
+<div class="sh">Order Information</div><div class="cols3">
+<div class="colbox"><div class="f"><span class="l">Order Date</span><span class="v">4/3/2026</span></div><div class="f"><span class="l">Order Type</span><span class="v">CartOrder</span></div><div class="f"><span class="l">Trans Type</span><span class="v">Wire_Out</span></div><div class="f"><span class="l">Employee ID</span><span class="v">Administrator-Admin</span></div></div>
+<div class="colbox"><div class="f"><span class="l">Assigned To</span><span class="v"></span></div><div class="f"><span class="l">Priority</span><span class="v">08:00AM-5:00PM</span></div><div class="f"><span class="l">Dest Type</span><span class="v">0</span></div><div class="f"><span class="l">Delivery</span><span class="v">Wire_Out</span></div></div>
+<div class="colbox"><div class="f"><span class="l">Location ID</span><span class="v">DEFAULT</span></div><div class="f"><span class="l">Payment</span><span class="v">Credit Card</span></div><div class="f"><span class="l">Bill Cust ID</span><span class="v">C-155107</span></div></div>
+</div>
+<div class="sh">Billing &amp; Payment</div><div class="cols3">
+<div class="colbox"><div class="f"><span class="l">Name</span><span class="v"></span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v"></span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span></div><div class="f"><span class="l">Phone</span><span class="v">3498573984</span></div><div class="f"><span class="l">Email</span><span class="v">wfwefwfe@wsefoihwjeof.com</span></div></div>
+<div class="colbox"><div class="freewrap"><span class="l">Customer Comments</span><div class="free"></div></div><div class="f"><span class="l">Source</span><span class="v"></span></div><div class="f"><span class="l">Cell</span><span class="v"></span></div><div class="f"><span class="l">Fax</span><span class="v"></span></div></div>
+<div class="colbox"><div class="f"><span class="l">Card Type</span><span class="v">Amex</span></div><div class="f"><span class="l">Card #</span><span class="v">XXXX-XXXX-XXXX-0000</span></div><div class="csz"><span class="l">Exp</span><span class="cv">XX/XXXX</span><span class="l">CSV</span><span class="cv"></span><span class="l">Approval</span><span class="cv">BLM-ACH</span></div><div class="f"><span class="l">Validation</span><span class="v"></span></div><div class="f"><span class="l">IP Address</span><span class="v"></span></div><div class="f"><span class="l">Fraud Rating</span><span class="v"></span></div><div class="f"><span class="l">Billing Zip</span><span class="v">12312</span></div><div class="f"><span class="l">Discount %</span><span class="v"></span></div></div></div>
+<div class="sh">Order Detail</div>
+<table class="od"><thead><tr><th style="width:66px;">Item ID</th><th>Item Name</th><th class="c" style="width:44px;">Qty</th><th class="r" style="width:74px;">Unit Price</th><th class="r" style="width:56px;">Disc</th><th class="c" style="width:52px;">Type</th><th class="r" style="width:74px;">Total</th></tr></thead><tbody>
+<tr><td>BN</td><td>BN</td><td class="c">1</td><td class="r">$175.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$175.00</td></tr>
+<tr class="desc"><td colspan="7"><b>Desc:</b> BN-Summer Festival + upgraded to deluxe--Main Subscription Product - Do not delete</td></tr>
+<tr><td>BN</td><td>BN</td><td class="c">1</td><td class="r">$0.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$0.00</td></tr>
+<tr class="desc"><td colspan="7"><b>Desc:</b> BN---</td></tr>
+<tr><td>Rose_1</td><td>Rose_1</td><td class="c">1</td><td class="r">$(50.00)</td><td class="r">0.00</td><td class="c">Flat</td><td class="r">$0.00</td></tr>
+<tr class="desc"><td colspan="7"><b>Desc:</b> Rose_1-  (Assigned To: 002Talha)</td></tr>
+</tbody></table>
+<div class="totals">
+<div class="c"><span class="tl">Sub Total</span><span class="ta">$125.00</span></div>
+<div class="c"><span class="tl">Delivery</span><span class="ta">$20.00</span></div>
+<div class="c"><span class="tl">Service</span><span class="ta">$35.00</span></div>
+<div class="c"><span class="tl">Relay</span><span class="ta">$5.40</span></div>
+<div class="c"><span class="tl">Discounts</span><span class="ta">$0.00</span></div>
+<div class="c"><span class="tl">Tax</span><span class="ta">8.60% $18.52</span></div>
+<div class="c tot"><span class="tl">Total</span><span class="ta">$203.92</span></div>
+</div>
+<div class="sh">Delivery Information &amp; Card Message</div><div class="cols3">
+<div class="colbox"><div class="f"><span class="l">Name</span><span class="v">ertg erger</span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v">1316 Santa Monica Blvd</span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Santa Monica, CA 90404 US</span></div><div class="f"><span class="l">Phone</span><span class="v">3423423423</span></div></div>
+<div class="colbox"><div class="freewrap"><span class="l">Driving Route Info</span><div class="free"></div></div><div class="f"><span class="l">Occasion</span><span class="v">Not Specified</span></div></div>
+<div class="colbox"><div class="freewrap"><span class="l">Card Message</span><div class="free"></div></div></div></div>
+<div class="ts"><span class="tlab">Time Stamp</span>
+<div class="tc"><span class="tl">Posted</span><span class="tv">04/03/26 12:50:05 PM EDT</span></div>
+<div class="tc"><span class="tl">Picked</span><span class="tv"></span></div>
+<div class="tc"><span class="tl">Shipped</span><span class="tv"></span></div>
+<div class="tc"><span class="tl">Received</span><span class="tv"></span></div>
+</div>
+<div class="notes-line"><span class="l">Internal Notes</span><b></b></div>
+<div class="sh">Wire-Out Information</div><div class="cols3">
+<div class="colbox"><div class="f"><span class="l">Wire Service</span><span class="v">Others</span></div><div class="f"><span class="l">Service Code</span><span class="v"></span></div><div class="f"><span class="l">Owner</span><span class="v"></span></div><div class="f"><span class="l">Florist Name</span><span class="v"></span></div><div class="f"><span class="l">Address</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span></div></div>
+<div class="colbox"><div class="f"><span class="l">Phone</span><span class="v">3498573984</span></div><div class="f"><span class="l">Email</span><span class="v">wfwefwfe@wsefoihwjeof.com</span></div><div class="f"><span class="l">Website</span><span class="v"></span></div><div class="f"><span class="l">Fax</span><span class="v"></span></div><div class="f"><span class="l">Trans ID</span><span class="v"></span></div></div>
+<div class="colbox"><div class="f"><span class="l">Status</span><span class="v"></span></div><div class="f"><span class="l">Trans Method</span><span class="v"></span></div><div class="f"><span class="l">Priority</span><span class="v">08:00AM-5:00PM</span></div></div></div>
+<div class="freewrap" style="margin-top:3px;"><span class="l">Wire Notes</span><div class="free"></div></div>
+<div class="report-footer"><span>DEFAULT &nbsp;&middot;&nbsp; 601 N Fort Lauderdale Beach Blvd, Fort Lauderdale, FL 33304 US</span><span class="pg">Page 1 of 1</span></div>
+</div></body></html>
