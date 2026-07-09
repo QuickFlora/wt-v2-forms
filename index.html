@@ -38,28 +38,31 @@ table.od th{border-bottom:1.5px solid var(--accent);padding:3px 6px;text-align:l
 table.od td{border-bottom:1px solid var(--line);padding:3px 6px;vertical-align:top;font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
 table.od th.r,table.od td.r{text-align:right;}table.od th.c,table.od td.c{text-align:center;}
 table.od tr.desc td{font-weight:400;font-style:italic;color:#59636e;border-bottom:1px solid var(--line);padding:0 6px 3px 24px;}
+table.od .iid{font-weight:400;color:var(--muted);font-size:9px;overflow-wrap:anywhere;}
 .totals{display:flex;margin-top:5px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .totals .c{flex:1;padding:4px 6px;display:flex;flex-direction:column;gap:1px;border-right:1px solid var(--line);}
 .totals .c:last-child{border-right:none;}
 .totals .c .tl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
 .totals .c .ta{font-weight:700;word-break:break-word;overflow-wrap:anywhere;}
 .totals .c.tot .tl{color:var(--accent);}.totals .c.tot .ta{color:var(--accent);font-weight:800;font-size:12px;}
-.ts{display:flex;margin-top:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.ts .tlab{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700;padding:4px 8px 4px 0;align-self:center;}
-.ts .tc{flex:1;padding:4px 6px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:1px;}
-.ts .tc .tl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
-.ts .tc .tv{font-weight:700;}
+.ts{display:flex;margin-top:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:stretch;}
+.ts .tlab{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700;padding:4px 8px 4px 0;align-self:center;white-space:nowrap;}
+.ts .tc{flex:1 1 0;min-width:0;padding:4px 5px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:1px;}
+.ts .tc .tl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;}
+.ts .tc .tv{font-weight:700;font-size:8.3px;white-space:nowrap;letter-spacing:-.1px;}
 .notes-line{margin-top:6px;}
 .notes-line .l{color:var(--muted);font-weight:400;text-transform:uppercase;font-size:8.5px;letter-spacing:.5px;margin-right:6px;}
 .notes-line b{word-break:break-word;overflow-wrap:anywhere;}
-.report-footer{display:flex;justify-content:space-between;align-items:flex-end;font-size:8.5px;color:var(--muted);margin-top:auto;padding-top:6px;border-top:1px solid var(--line);}
+.report-footer{display:flex;justify-content:space-between;align-items:flex-end;font-size:8.5px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--line);}
+.bottom-spacer{flex:1 1 auto;min-height:6px;}
 .report-footer .pg{font-weight:700;color:var(--ink);}
+.print-audit{font-size:7.5px;color:var(--muted);text-align:center;padding-top:3px;letter-spacing:.2px;}
+.print-audit b{color:var(--ink);font-weight:700;}
 .screen-note{max-width:8.5in;margin:0 auto 10px;background:#fff8e1;border:1px solid #f0d67a;border-radius:5px;padding:8px 12px;font:12px/1.4 "Segoe UI",Arial;color:#6b5a10;}
 .screen-note.ok{background:#eef6f1;border-color:#8fc9ae;color:#1f5c40;}
 @media print{.screen-note{display:none;}html,body{width:8.5in;margin:0;}.page{padding:0.3in 0.34in 0.24in 0.34in;}@page{size:letter;margin:0;}}
 @media screen{body{background:#d9dee3;padding:20px;}.page{box-shadow:0 2px 18px rgba(0,0,0,0.18);border-radius:2px;margin:0 auto;}}
 </style></head><body>
-
 <div class="page">
 <div class="report-header">
 <div class="hdr-left"><span class="delivery-pill">Wire_Out</span>
@@ -73,17 +76,17 @@ table.od tr.desc td{font-weight:400;font-style:italic;color:#59636e;border-botto
 <div class="colbox"><div class="f"><span class="l">Location ID</span><span class="v">DEFAULT</span></div><div class="f"><span class="l">Payment</span><span class="v">Credit Card</span></div><div class="f"><span class="l">Bill Cust ID</span><span class="v">C-155107</span></div></div>
 </div>
 <div class="sh">Billing &amp; Payment</div><div class="cols3">
-<div class="colbox"><div class="f"><span class="l">Name</span><span class="v"></span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v"></span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span></div><div class="f"><span class="l">Phone</span><span class="v">3498573984</span></div><div class="f"><span class="l">Email</span><span class="v">wfwefwfe@wsefoihwjeof.com</span></div></div>
+<div class="colbox"><div class="f"><span class="l">Name</span><span class="v"></span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v"></span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span></div><div class="csz"><span class="l">Phone</span><span class="cv">+1-(349)-857-3984</span><span class="l">Email</span><span class="cv">wfwefwfe@wsefoihwjeof.com</span></div></div>
 <div class="colbox"><div class="freewrap"><span class="l">Customer Comments</span><div class="free"></div></div><div class="f"><span class="l">Source</span><span class="v"></span></div><div class="f"><span class="l">Cell</span><span class="v"></span></div><div class="f"><span class="l">Fax</span><span class="v"></span></div></div>
 <div class="colbox"><div class="f"><span class="l">Card Type</span><span class="v">Amex</span></div><div class="f"><span class="l">Card #</span><span class="v">XXXX-XXXX-XXXX-0000</span></div><div class="csz"><span class="l">Exp</span><span class="cv">XX/XXXX</span><span class="l">CSV</span><span class="cv"></span><span class="l">Approval</span><span class="cv">BLM-ACH</span></div><div class="f"><span class="l">Validation</span><span class="v"></span></div><div class="f"><span class="l">IP Address</span><span class="v"></span></div><div class="f"><span class="l">Fraud Rating</span><span class="v"></span></div><div class="f"><span class="l">Billing Zip</span><span class="v">12312</span></div><div class="f"><span class="l">Discount %</span><span class="v"></span></div></div></div>
 <div class="sh">Order Detail</div>
-<table class="od"><thead><tr><th style="width:66px;">Item ID</th><th>Item Name</th><th class="c" style="width:44px;">Qty</th><th class="r" style="width:74px;">Unit Price</th><th class="r" style="width:56px;">Disc</th><th class="c" style="width:52px;">Type</th><th class="r" style="width:74px;">Total</th></tr></thead><tbody>
-<tr><td>BN</td><td>BN</td><td class="c">1</td><td class="r">$175.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$175.00</td></tr>
-<tr class="desc"><td colspan="7"><b>Desc:</b> BN-Summer Festival + upgraded to deluxe--Main Subscription Product - Do not delete</td></tr>
-<tr><td>BN</td><td>BN</td><td class="c">1</td><td class="r">$0.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$0.00</td></tr>
-<tr class="desc"><td colspan="7"><b>Desc:</b> BN---</td></tr>
-<tr><td>Rose_1</td><td>Rose_1</td><td class="c">1</td><td class="r">$(50.00)</td><td class="r">0.00</td><td class="c">Flat</td><td class="r">$0.00</td></tr>
-<tr class="desc"><td colspan="7"><b>Desc:</b> Rose_1-  (Assigned To: 002Talha)</td></tr>
+<table class="od"><thead><tr><th>Item</th><th class="c" style="width:44px;">Qty</th><th class="r" style="width:74px;">Unit Price</th><th class="r" style="width:56px;">Disc</th><th class="c" style="width:52px;">Type</th><th class="r" style="width:74px;">Total</th></tr></thead><tbody>
+<tr><td><b>BN</b></td><td class="c">1</td><td class="r">$175.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$175.00</td></tr>
+<tr class="desc"><td colspan="6"><b>Desc:</b> BN-Summer Festival + upgraded to deluxe--Main Subscription Product - Do not delete</td></tr>
+<tr><td><b>BN</b></td><td class="c">1</td><td class="r">$0.00</td><td class="r">0.00</td><td class="c">%</td><td class="r">$0.00</td></tr>
+<tr class="desc"><td colspan="6"><b>Desc:</b> BN---</td></tr>
+<tr><td><b>Rose_1</b></td><td class="c">1</td><td class="r">$(50.00)</td><td class="r">0.00</td><td class="c">Flat</td><td class="r">$0.00</td></tr>
+<tr class="desc"><td colspan="6"><b>Desc:</b> Rose_1-  (Assigned To: 002Talha)</td></tr>
 </tbody></table>
 <div class="totals">
 <div class="c"><span class="tl">Sub Total</span><span class="ta">$125.00</span></div>
@@ -95,9 +98,16 @@ table.od tr.desc td{font-weight:400;font-style:italic;color:#59636e;border-botto
 <div class="c tot"><span class="tl">Total</span><span class="ta">$203.92</span></div>
 </div>
 <div class="sh">Delivery Information &amp; Card Message</div><div class="cols3">
-<div class="colbox"><div class="f"><span class="l">Name</span><span class="v">ertg erger</span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v">1316 Santa Monica Blvd</span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Santa Monica, CA 90404 US</span></div><div class="f"><span class="l">Phone</span><span class="v">3423423423</span></div></div>
+<div class="colbox"><div class="f"><span class="l">Name</span><span class="v">ertg erger</span></div><div class="f"><span class="l">Attention</span><span class="v"></span></div><div class="f"><span class="l">Company</span><span class="v"></span></div><div class="f"><span class="l">Address 1</span><span class="v">1316 Santa Monica Blvd</span></div><div class="f"><span class="l">Address 2</span><span class="v"></span></div><div class="f"><span class="l">Suite</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Santa Monica, CA 90404 US</span><span class="l">Phone</span><span class="cv">+1-(342)-342-3423</span></div></div>
 <div class="colbox"><div class="freewrap"><span class="l">Driving Route Info</span><div class="free"></div></div><div class="f"><span class="l">Occasion</span><span class="v">Not Specified</span></div></div>
 <div class="colbox"><div class="freewrap"><span class="l">Card Message</span><div class="free"></div></div></div></div>
+<div class="sh">Wire-Out Information</div><div class="cols3">
+<div class="colbox"><div class="f"><span class="l">Wire Service</span><span class="v">Others</span></div><div class="f"><span class="l">Service Code</span><span class="v"></span></div><div class="f"><span class="l">Owner</span><span class="v"></span></div><div class="f"><span class="l">Florist Name</span><span class="v"></span></div><div class="f"><span class="l">Address</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span><span class="l">Phone</span><span class="cv">+1-(349)-857-3984</span></div></div>
+<div class="colbox"><div class="csz"><span class="l">Email</span><span class="cv">wfwefwfe@wsefoihwjeof.com</span></div><div class="f"><span class="l">Website</span><span class="v"></span></div><div class="f"><span class="l">Fax</span><span class="v"></span></div><div class="f"><span class="l">Trans ID</span><span class="v"></span></div></div>
+<div class="colbox"><div class="f"><span class="l">Status</span><span class="v"></span></div><div class="f"><span class="l">Trans Method</span><span class="v"></span></div><div class="f"><span class="l">Priority</span><span class="v">08:00AM-5:00PM</span></div></div></div>
+<div class="freewrap" style="margin-top:3px;"><span class="l">Wire Notes</span><div class="free"></div></div>
+<div class="bottom-spacer"></div>
+<div class="notes-line"><span class="l">Internal Notes</span><b></b></div>
 <div class="ts"><span class="tlab">Time Stamp</span>
 <div class="tc"><span class="tl">Booked</span><span class="tv">04/03/26 12:50:05 PM EDT</span></div>
 <div class="tc"><span class="tl">Picked</span><span class="tv"></span></div>
@@ -105,11 +115,6 @@ table.od tr.desc td{font-weight:400;font-style:italic;color:#59636e;border-botto
 <div class="tc"><span class="tl">Delivered</span><span class="tv"></span></div>
 <div class="tc"><span class="tl">Invoiced</span><span class="tv"></span></div>
 </div>
-<div class="notes-line"><span class="l">Internal Notes</span><b></b></div>
-<div class="sh">Wire-Out Information</div><div class="cols3">
-<div class="colbox"><div class="f"><span class="l">Wire Service</span><span class="v">Others</span></div><div class="f"><span class="l">Service Code</span><span class="v"></span></div><div class="f"><span class="l">Owner</span><span class="v"></span></div><div class="f"><span class="l">Florist Name</span><span class="v"></span></div><div class="f"><span class="l">Address</span><span class="v"></span></div><div class="csz"><span class="l">City/ST/Zip</span><span class="cv">Fort Lauderdale, FL 33301 US</span></div></div>
-<div class="colbox"><div class="f"><span class="l">Phone</span><span class="v">3498573984</span></div><div class="f"><span class="l">Email</span><span class="v">wfwefwfe@wsefoihwjeof.com</span></div><div class="f"><span class="l">Website</span><span class="v"></span></div><div class="f"><span class="l">Fax</span><span class="v"></span></div><div class="f"><span class="l">Trans ID</span><span class="v"></span></div></div>
-<div class="colbox"><div class="f"><span class="l">Status</span><span class="v"></span></div><div class="f"><span class="l">Trans Method</span><span class="v"></span></div><div class="f"><span class="l">Priority</span><span class="v">08:00AM-5:00PM</span></div></div></div>
-<div class="freewrap" style="margin-top:3px;"><span class="l">Wire Notes</span><div class="free"></div></div>
 <div class="report-footer"><span>DEFAULT &nbsp;&middot;&nbsp; 601 N Fort Lauderdale Beach Blvd, Fort Lauderdale, FL 33304 US</span><span class="pg">Page 1 of 1</span></div>
+<div class="print-audit">Printed from IP: <b>10.0.4.212</b> &nbsp;&middot;&nbsp; Printer: <b>HP-LJ4200-FRONTDESK</b> &nbsp;&middot;&nbsp; Server response: <b>84 ms</b></div>
 </div></body></html>
